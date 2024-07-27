@@ -1,7 +1,7 @@
 package com.saucedemo;
 
 import org.testng.annotations.Test;
-
+//validat
 public class TestePaginaMeniuDinStangaSus extends PaginaDeBazaDupaLogareFunctiiPtTest
 {
     // teste verificare existenta butoane meniu stanga sus
@@ -52,26 +52,29 @@ public class TestePaginaMeniuDinStangaSus extends PaginaDeBazaDupaLogareFunctiiP
  // verificare apasare buton si corectitudinea afisarii acestuia
 
     @Test
-    public void verificareApasareButoanLogoutTest()
+    public void verificareApasareButoanLogoutDinMeniuTest()
     {
         apasaButonLogout();
+        verificarePaginaUrl(urlPaginaDeStart);
     }
 
     @Test
-    public void verificareApasareButonAboutTest() //nefinalizat
+    public void verificareApasareButonAboutDinMeniuTest()
     {
         apasaButonAbout();
+        verificarePaginaUrl(urlAbout);
     }
 
     @Test
-    public void verificareApasareButonAllItemsTest() // nefinalizat
+    public void verificareApasareButonDinMeniuAllItemsTest()
     {
         apasareButoanAllItems();
+        verificarePaginaUrl(urlInventoryAllItem);
     }
 
-    @Test
-    public void verificareApasareButonRessetAppStateTest()
-    {
-        apasareButonResetAppState();
-    }
+//    @Test
+//    public void verificareApasaButonResetAppState()
+//    {
+//        apasaButonByXpath(locatorButonRessetAppStateByXpat);
+//    }
 }

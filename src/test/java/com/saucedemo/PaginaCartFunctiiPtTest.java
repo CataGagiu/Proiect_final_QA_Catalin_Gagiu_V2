@@ -1,22 +1,25 @@
 package com.saucedemo;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
 public class PaginaCartFunctiiPtTest extends PaginaDeBazaDupaLogareFunctiiPtTest
 {
+// verifica existenta element in Cart
+    public void verificaExistentaButonCheckout()
+    {
+        verificareExistentaElementByID(locatorButonCheckoutByID);
+    }
+    public void verificaExistentaButonContinue()
+    {
+        verificareExistentaElementByID(locatorButonContinueByID);
+    }
 
-public void verificaExistentaButonCheckout()
-{
-    WebElement butonCheckout=driver.findElement(By.id(locatorButonCheckoutByID));
-    butonCheckout.isDisplayed();
-}
-public void apasaButonCheckout()
-{
-    apasaButonCart();
-    WebElement butonCheckout=driver.findElement(By.id(locatorButonCheckoutByID));
-    butonCheckout.click();
-}
+    //apasa butoane
+    public void apasaButonCheckout()
+    {
+        apasaButonByID(locatorButonCheckoutByID);
+    }
+    public void apasaButonContinue()
+    {
+        apasaButonByID(locatorButonContinueByID);
+    }
+
 }

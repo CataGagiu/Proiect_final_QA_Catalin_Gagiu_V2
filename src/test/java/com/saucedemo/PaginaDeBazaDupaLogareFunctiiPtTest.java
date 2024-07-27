@@ -1,145 +1,269 @@
 package com.saucedemo;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
 {
     @BeforeMethod
 
-   public void logareUser4()
+   public void logareUser()
    {
        introduUserDefinitInPaginaDeBaza();
        introduParolaSecretSauce();
-       apasaButonLogin();
+       apasaButonByID(locatorButonLoginByID);
        apasareButonMeniu();
    }
-//verificari existenta butoane meniu stanga sus
 
-   public void verificareExistentaButonAllItem()
-   {
-         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-         WebElement butonAllItem=driver.findElement(By.xpath("/html//a[@id='inventory_sidebar_link']"));
-         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='inventory_sidebar_link']")));
-         assert butonAllItem.isDisplayed();
-   }
+    // verificare existenta buton AllItem
+    public void verificareExistentaButonAllItem()
+    {
+
+        verificareExistentaElementByXpath(locatorButonAllItemByXpath);
+    }
 
    // verificare daca exista buton LOGOUT
     public void verificareExistenteiLogout()
     {
-          Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-          WebElement butonLogout=driver.findElement(By.xpath("/html//a[@id='logout_sidebar_link']"));
-          wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='logout_sidebar_link']")));
-          assert butonLogout.isDisplayed();
+          verificareExistentaElementByXpath(locatorButonLogoutByXpath);
     }
 
     // verificare existenta buton reset About
     public void verificareExistentaAbout()
     {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement butonAbout=driver.findElement(By.xpath("/html//a[@id='about_sidebar_link']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='about_sidebar_link']")));
-        assert butonAbout.isDisplayed();
+        verificareExistentaElementByXpath(locatorButonAboutDinMeniuStangaSusByXpath);
     }
 
     //verificare existenta buton Resset App State
     public void verificareExistentaRessetAppState()
     {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement butonResetAppState=driver.findElement(By.xpath("/html//a[@id='reset_sidebar_link']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='reset_sidebar_link']")));
-        assert butonResetAppState.isDisplayed();
+        verificareExistentaElementByXpath(locatorButonRessetAppStateByXpat);
     }
 
     //verificari apasare butoane meniu stanga sus
 
     public void apasareButoanAllItems() // in lucru fara verificare functionalitate
     {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement butonAllItem=driver.findElement(By.xpath("/html//a[@id='inventory_sidebar_link']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='inventory_sidebar_link']")));
-        butonAllItem.click();
-
+        apasaButonByXpath(locatorButonAllItemByXpath);
     }
-
-    public void apasareButonResetAppState()  // in lucru fara verificare functionalitate
-    {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement butonResetAppState=driver.findElement(By.xpath("/html//a[@id='reset_sidebar_link']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='reset_sidebar_link']")));
-        butonResetAppState.click();
-
-    }
-
     public void apasaButonLogout()// finalizat
     {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement butonLogout=driver.findElement(By.xpath("/html//a[@id='logout_sidebar_link']"));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html//a[@id='logout_sidebar_link']")));
-        butonLogout.click();
-
-        // gaseste buton login
-        WebElement butonLogin= driver.findElement(By.id("login-button"));
-        assert butonLogin.isDisplayed();
+        apasaButonByXpath(locatorButonLogoutByXpath);
+        verificareExistentaElementByID(locatorCampLoginUserByID);
     }
-
     public void apasaButonAbout()// finalizat
     {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement butonAbout=driver.findElement(By.xpath(locatorButonAboutDinMeniuStangaSusByXpath));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorButonAboutDinMeniuStangaSusByXpath)));
-        butonAbout.click();
-
-        // verificare url
-        String linkAsteptatDirectionareAbout="https://saucelabs.com/";
-
-        //apasare buton cookies
-        WebElement butonCookies=driver.findElement(By.xpath(locatorButonCookieInPaginaAboutByXpath));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorButonCookieInPaginaAboutByXpath)));
-        butonCookies.click();
-
-        String linkDirectionareAbout= driver.getCurrentUrl();
-        Assert.assertEquals(linkDirectionareAbout,linkAsteptatDirectionareAbout);
+        apasaButonByXpath(locatorButonAboutDinMeniuStangaSusByXpath);
+        apasaButonByXpath(locatorButonCookieInPaginaAboutByXpath);
+        verificarePaginaUrl(urlAbout);
     }
 
     public void verificaExistentaCart()
     {
-        WebElement cart=driver.findElement(By.xpath(locatorButonCartDreaptaSusByXpath));
-        cart.isDisplayed();
+        verificareExistentaElementByXpath(locatorButonCartDreaptaSusByXpath);
     }
+
+    //Cart
 
     public void apasaButonCart()
     {
-        WebElement cart=driver.findElement(By.xpath(locatorButonCartDreaptaSusByXpath));
-        cart.click();
+        apasaButonByXpath(locatorButonCartDreaptaSusByXpath);
     }
-
     public void verificaRezultatButonCartApasat()
     {
-        String linkDirectionareCartAsteptat="https://www.saucedemo.com/cart.html";
-        String linkDirectionareCart= driver.getCurrentUrl();
-        Assert.assertEquals(linkDirectionareCart,linkDirectionareCartAsteptat);
+        verificarePaginaUrl(urlCart);
     }
     public void apasaButonCheckout()
     {
-        WebElement butonCheckout=driver.findElement(By.id(locatorButonCheckoutByID));
-        butonCheckout.click();
+        apasaButonByID(locatorButonCheckoutByID);
     }
     public void verificaRezultatButonCheckoutApasat()
     {
-        String linkDirectionareChackout= driver.getCurrentUrl();
-        String linkDirectionareAsteptatCheckout="https://www.saucedemo.com/checkout-step-one.html";
-        Assert.assertEquals(linkDirectionareChackout,linkDirectionareAsteptatCheckout);
+        verificarePaginaUrl(urlChechoutStepOne);
+    }
+    public void verificareExistentaButonContinueShopping()
+    {
+        verificareExistentaElementByNume(locatorButonContinueShopingByname);
+    }
+    public void apasaButonContinueShopping()
+    {
+        apasaButonByNume(locatorButonContinueShopingByname);
+    }
+    public void verificareExistentaBadgeCart()
+    {
+        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
+        assert  badge.isDisplayed();
+    }
+//    public int verificareCifraBadgeAfisat()
+//    {
+//        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
+//        int nrBadge=0;
+//        if (badge.isDisplayed())
+//            nrBadge+=
+//        return nrBadge;
+//    }
+    //verificare butoane Add To Chart
+
+    public void verificareExistentaButonAddToChart1()
+    {
+        verificareExistentaElementByID(locatorButonAddToChartProdus1ByID);
+    }
+    public void verificareExistentaButonAddToChart2()
+    {
+        verificareExistentaElementByID(locatorButonAddToChartProdus2ByID);
+    }
+    public void verificareExistentaButonAddToChart3()
+    {
+        verificareExistentaElementByID(locatorButonAddToChartProdus3ByID);
+    }
+    public void verificareExistentaButonAddToChart4()
+    {
+        verificareExistentaElementByID(locatorButonAddToChartProdus4ByID);
+    }
+    public void verificareExistentaButonAddToChart5()
+    {
+        verificareExistentaElementByID(locatorButonAddToChartProdus5ByID);
+    }
+    public void verificareExistentaButonAddToChart6()
+    {
+        verificareExistentaElementByID(locatorButonAddToChartProdus6ByID);
     }
 
+    //apasa butoane AddToChart
+
+    public void apasaButonAddToChart1()
+    {
+        apasaButonByID(locatorButonAddToChartProdus1ByID);
+
+    }
+    public void apasaButonAddToChart2()
+    {
+        apasaButonByID(locatorButonAddToChartProdus2ByID);
+    }
+    public void apasaButonAddToChart3()
+    {
+        apasaButonByID(locatorButonAddToChartProdus3ByID);
+    }
+    public void apasaButonAddToChart4()
+    {
+        apasaButonByID(locatorButonAddToChartProdus4ByID);
+    }
+    public void apasaButonAddToChart5()
+    {
+        apasaButonByID(locatorButonAddToChartProdus5ByID);
+    }
+    public void apasaButonAddToChart6()
+    {
+        apasaButonByID(locatorButonAddToChartProdus6ByID);
+    }
+
+    //verifica daca dupa apasare Add to chart apare Remove
+    public void verificareModificareMesajButonAddToChartInRemoveProdus1()
+    {
+        verificareExistentaElementByID(locatorButonRemoveProdus1ByID);
+    }
+    public void verificareModificareMesajButonAddToChartInRemoveProdus2()
+    {
+        verificareExistentaElementByID(locatorButonRemoveProdus2ByID);
+    }
+    public void verificareModificareMesajButonAddToChartInRemoveProdus3()
+    {
+        verificareExistentaElementByID(locatorButonRemoveProdus3ByID);
+    }
+    public void verificareModificareMesajButonAddToChartInRemoveProdus4()
+    {
+        verificareExistentaElementByID(locatorButonRemoveProdus4ByID);
+    }
+    public void verificareModificareMesajButonAddToChartInRemoveProdus5()
+    {
+        verificareExistentaElementByID(locatorButonRemoveProdus5ByID);
+    }
+    public void verificareModificareMesajButonAddToChartInRemoveProdus6()
+    {
+        verificareExistentaElementByID(locatorButonRemoveProdus6ByID);
+    }
+
+    // apasa butoanele Remove
+
+    public void apasaButonRemoveProdus1()
+    {
+        apasaButonByID(locatorButonRemoveProdus1ByID);
+    }
+    public void apasaButonRemoveProdus2()
+    {
+        apasaButonByID(locatorButonRemoveProdus2ByID);
+    }
+    public void apasaButonRemoveProdus3()
+    {
+        apasaButonByID(locatorButonRemoveProdus3ByID);
+    }
+    public void apasaButonRemoveProdus4()
+    {
+        apasaButonByID(locatorButonRemoveProdus4ByID);
+    }
+    public void apasaButonRemoveProdus5()
+    {
+        apasaButonByID(locatorButonRemoveProdus5ByID);
+    }
+    public void apasaButonRemoveProdus6()
+    {
+        apasaButonByID(locatorButonRemoveProdus6ByID);
+    }
+
+    //verificare imagine produs
+
+    public void verificareImagineProdus1()
+    {
+        verificareExistentaElementByXpath(locatorImagineProdus1ByXpath);
+    }
+    public void verificareImagineProdus2()
+    {
+        verificareExistentaElementByXpath(locatorImagineProdus2ByXpath);
+    }
+    public void verificareImagineProdus3()
+    {
+        verificareExistentaElementByXpath(locatorImagineProdus3ByXpath);
+    }
+    public void verificareImagineProdus4()
+    {
+        verificareExistentaElementByXpath(locatorImagineProdus4ByXpath);
+    }
+    public void verificareImagineProdus5()
+    {
+        verificareExistentaElementByXpath(locatorImagineProdus5ByXpath);
+    }
+    public void verificareImagineProdus6()
+    {
+        verificareExistentaElementByXpath(locatorImagineProdus6ByXpath);
+    }
+    //verificare pret produs
+    public void verificaPretProdus1()
+    {
+        verificaPretProdusByCss(pretProdus1,locatorPretProdus1ByCsss);
+    }
+    public void verificaPretProdus2()
+    {
+        verificaPretProdusByCss(pretProdus2,locatorPretProdus2ByCsss);
+    }
+    public void verificaPretProdus3()
+    {
+        verificaPretProdusByCss(pretProdus3,locatorPretProdus3ByCsss);
+    }
+    public void verificaPretProdus4()
+    {
+        verificaPretProdusByCss(pretProdus4,locatorPretProdus4ByCsss);
+    }
+    public void verificaPretProdus5()
+    {
+        verificaPretProdusByCss(pretProdus5,locatorPretProdus5ByCsss);
+    }
+    public void verificaPretProdus6()
+    {
+        verificaPretProdusByCss(pretProdus6,locatorPretProdus6ByCsss);
+    }
+
+
+    //
 
 }

@@ -1,30 +1,29 @@
 package com.saucedemo;
 
 import org.testng.annotations.Test;
-
+//validate
 public class TesteLoginSite extends LoginBazaFunctiiPtTest
 {
     // testare functionala credentiale corecte la toti userii
     @Test
-    public void credentialeCorecteUser1()// logare functionala credentiale coreocte user 1
+    public void credentialeCorecteUser1Test()// logare functionala credentiale coreocte user 1
     {
         introduUsernameStandardUser();
         introduParolaSecretSauce();
         apasaButonLogin();
         verificareLogareButonMeniu();
     }
-
     @Test
-    public void credentialeCorecteUser2() //logare functionala credentiale coreocte user 2
+    public void credentialeCorecteUser2Test() //logare functionala credentiale coreocte user 2
     {
         introduUsernameLockedOutUser();
-        introduParolaSecretSauce();
+        introduParolaSecretSauce();;
         apasaButonLogin();
         verificareMesajDeEroareUserBlocat();
     }
 
     @Test
-    public void credentialeCorecteUser3() //logare functionala credentiale coreocte user 3
+    public void credentialeCorecteUser3Test() //logare functionala credentiale coreocte user 3
     {
         introduUsernameProblemUser();
         introduParolaSecretSauce();
@@ -33,7 +32,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void credentialeCorecteUser4() // logare functionala credentiale coreocte user 4
+    public void credentialeCorecteUser4Test() // logare functionala credentiale coreocte user 4
     {
         introduUsernamePerformanceGlitchUser();
         introduParolaSecretSauce();
@@ -42,7 +41,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void credentialeCorecteUser5() // logare functionala credentiale coreocte user 5
+    public void credentialeCorecteUser5Test() // logare functionala credentiale coreocte user 5
     {
         introduUsernameErrorUser();
         introduParolaSecretSauce();
@@ -51,7 +50,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void credentialeCorecteUser6() // logare functionala credentiale coreocte user 6
+    public void credentialeCorecteUser6Test() // logare functionala credentiale coreocte user 6
     {
         introduUsernameVisualUser();
         introduParolaSecretSauce();
@@ -61,7 +60,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
 
     //testare nonfunctionala user corect parola gresita la toti userii
     @Test
-    public void user1CorectSiParolaGresita() // testare nonfunctionala user1 corect parola gresita
+    public void user1CorectSiParolaGresitaTest() // testare nonfunctionala user1 corect parola gresita
     {
         introduUsernameStandardUser();
         introduParolaParolaGresita();
@@ -70,7 +69,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user2CorectSiParolaGresita() // testare nonfunctionala user2 corect parola gresita
+    public void user2CorectSiParolaGresitaTest() // testare nonfunctionala user2 corect parola gresita
     {
         introduUsernameLockedOutUser();
         introduParolaParolaGresita();
@@ -79,7 +78,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user3CorectSiParolaGresita() // testare nonfunctionala user3 corect parola gresita
+    public void user3CorectSiParolaGresitaTest() // testare nonfunctionala user3 corect parola gresita
     {
         introduUsernameProblemUser();
         introduParolaParolaGresita();
@@ -88,7 +87,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user4CorectSiParolaGresita() // testare nonfunctionala user4 corect parola gresita
+    public void user4CorectSiParolaGresitaTest() // testare nonfunctionala user4 corect parola gresita
     {
         introduUsernamePerformanceGlitchUser();
         introduParolaParolaGresita();
@@ -97,7 +96,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user5CorectSiParolaGresita() // testare nonfunctionala user5 corect parola gresita
+    public void user5CorectSiParolaGresitaTest() // testare nonfunctionala user5 corect parola gresita
     {
         introduUsernameErrorUser();
         introduParolaParolaGresita();
@@ -106,7 +105,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user6CorectSiParolaGresita() // testare nonfunctionala user6 corect parola gresita
+    public void user6CorectSiParolaGresitaTest() // testare nonfunctionala user6 corect parola gresita
     {
         introduUsernameVisualUser();
         introduParolaParolaGresita();
@@ -116,7 +115,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
 
     // testare nonfunctionala user gol parola corecta
     @Test
-    public void userGolParolaCorecta()
+    public void userGolParolaCorectaTest()
     {
         introduParolaSecretSauce();
         apasaButonLogin();
@@ -125,7 +124,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
 
     //testare nonfunctionala user corect parola lipsa
     @Test
-    public void user1CorectParolaLipsa() // testare nonfunctionala user6 corect parola lipsa
+    public void user1CorectParolaLipsaTest() // testare nonfunctionala user6 corect parola lipsa
     {
         introduUsernameStandardUser();
         apasaButonLogin();
@@ -133,7 +132,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user2CorectParolaLipsa() // testare nonfunctionala user2 corect parola lipsa
+    public void user2CorectParolaLipsaTest() // testare nonfunctionala user2 corect parola lipsa
     {
         introduUsernameLockedOutUser();
         apasaButonLogin();
@@ -141,7 +140,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user3CorectParolaLipsa() // testare nonfunctionala user3 corect parola lipsa
+    public void user3CorectParolaLipsaTest() // testare nonfunctionala user3 corect parola lipsa
     {
         introduUsernameProblemUser();
         apasaButonLogin();
@@ -149,7 +148,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user4CorectParolaLipsa() // testare nonfunctionala user4 corect parola lipsa
+    public void user4CorectParolaLipsaTest() // testare nonfunctionala user4 corect parola lipsa
     {
         introduUsernamePerformanceGlitchUser();
         apasaButonLogin();
@@ -157,7 +156,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user5CorectParolaLipsa() // testare nonfunctionala user5 corect parola lipsa
+    public void user5CorectParolaLipsaTest() // testare nonfunctionala user5 corect parola lipsa
     {
         introduUsernameErrorUser();
         apasaButonLogin();
@@ -165,7 +164,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void user6CorectParolaLipsa() // testare nonfunctionala user6 corect parola lipsa
+    public void user6CorectParolaLipsaTest() // testare nonfunctionala user6 corect parola lipsa
     {
         introduUsernameVisualUser();
         apasaButonLogin();
@@ -173,7 +172,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     }
 
     @Test
-    public void CredentialeLipsaTest()
+    public void CredentialeLipsaTest()//testare nonfunctionala credentiale lipsa
     {
         apasaButonLogin();
         verificareMesajDeEroareUserLipsa();

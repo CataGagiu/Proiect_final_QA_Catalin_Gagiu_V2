@@ -1,7 +1,7 @@
 package com.saucedemo;
 
 import org.testng.annotations.Test;
-
+//validat
 public class TesteCart extends PaginaCartFunctiiPtTest
 {
     @Test
@@ -32,4 +32,18 @@ public class TesteCart extends PaginaCartFunctiiPtTest
         verificaRezultatButonCheckoutApasat();
     }
 
+    @Test
+    public void existentaButonContinueShoppingTest()
+    {
+        apasaButonCart();
+        verificareExistentaButonContinueShopping();
+    }
+
+    @Test
+    public void apasaButonContinueShoppingTest()
+    {
+        apasaButonCart();
+        apasaButonContinueShopping();
+        verificarePaginaUrl(urlInventoryAllItem);
+    }
 }
