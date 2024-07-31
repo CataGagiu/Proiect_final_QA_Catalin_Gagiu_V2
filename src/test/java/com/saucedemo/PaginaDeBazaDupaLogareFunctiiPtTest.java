@@ -95,14 +95,12 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
         WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
         assert  badge.isDisplayed();
     }
-//    public int verificareCifraBadgeAfisat()
-//    {
-//        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
-//        int nrBadge=0;
-//        if (badge.isDisplayed())
-//            nrBadge+=
-//        return nrBadge;
-//    }
+    public boolean verificareCifraBadgeAfisat()
+    {
+        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
+        return  badge.isDisplayed();
+
+    }
     //verificare butoane Add To Chart
 
     public void verificareExistentaButonAddToChart1()
