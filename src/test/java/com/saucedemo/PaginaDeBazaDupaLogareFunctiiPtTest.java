@@ -99,7 +99,6 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
     {
         WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
         return  badge.isDisplayed();
-
     }
     //verificare butoane Add To Chart
 

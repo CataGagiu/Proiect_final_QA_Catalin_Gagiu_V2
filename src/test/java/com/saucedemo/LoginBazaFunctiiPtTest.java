@@ -35,20 +35,20 @@ public class LoginBazaFunctiiPtTest extends PaginaDeBaza
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatieElementID)));
         assert element.isDisplayed();
     }
-    public void verificareExistentaElementXpath(String locatieElementID)
-    {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element= driver.findElement(By.xpath(locatieElementID));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatieElementID)));
-        assert element.isDisplayed();
-    }
-    public void verificareExistentaElementByCss(String locatorElementCss)
-    {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        WebElement element=driver.findElement(By.cssSelector(locatorElementCss));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatorElementCss)));
-        assert element.isDisplayed();
-    }
+//    public void verificareExistentaElementXpath(String locatieElementID)
+//    {
+//        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebElement element= driver.findElement(By.xpath(locatieElementID));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatieElementID)));
+//        assert element.isDisplayed();
+//    }
+//    public void verificareExistentaElementByCss(String locatorElementCss)
+//    {
+//        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        WebElement element=driver.findElement(By.cssSelector(locatorElementCss));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatorElementCss)));
+//        assert element.isDisplayed();
+//    }
     public void verificaPretProdusByCss(String pretProd,String locatorPretProdus)
 
     {
