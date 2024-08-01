@@ -14,9 +14,6 @@ public class LoginBazaFunctiiPtTest extends PaginaDeBaza
 {
     //intarziere deschidere element
 
-
-    //verificare element locatie
-
     public void intarziereDeschidereElementByXpath(String locatorElementXpath)
     {
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -26,7 +23,6 @@ public class LoginBazaFunctiiPtTest extends PaginaDeBaza
     {
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatorElementByNume)));
-
     }
 
     public void verificareExistentaElementByXpath(String locatorElement)

@@ -22,7 +22,6 @@ public class PaginaDeBaza
         driver.get(url);
         driver.manage().window().maximize();
     }
-
     // !!!!!!!!!!!!!!!!Locatori !!!!!!!!!!!!!!!!!!!!
     // pagina de baza
     String locatorCampLoginUserByID="user-name";
@@ -147,12 +146,12 @@ public class PaginaDeBaza
 
     //!!!!!!!!!!!!!!!!!locator inventar produs!!!!!!!!!!!!
 
-//    String fisierImagine1="sauce-backpack-1200x1500.0a0b85a3.jpg";
-//    String fisierImagine2="bike-light-1200x1500.37c843b0.jpg";
-//    String fisierImagine3="bolt-shirt-1200x1500.c2599ac5.jpg";
-//    String fisierImagine4="sauce-pullover-1200x1500.51d7ffaf.jpg";
-//    String fisierImagine5="red-onesie-1200x1500.2ec615b2.jpg";
-//    String fisierIMAGINE6="red-tatt-1200x1500.30dadef4.jpg";
+    String fisier1ImagineDenumire="sauce-backpack-1200x1500.0a0b85a3.jpg";
+    String fisier2ImagineDenumire="bike-light-1200x1500.37c843b0.jpg";
+    String fisier3ImagineDenumire="bolt-shirt-1200x1500.c2599ac5.jpg";
+    String fisier4ImagineDenumire="sauce-pullover-1200x1500.51d7ffaf.jpg";
+    String fisier5ImagineDenumire="red-onesie-1200x1500.2ec615b2.jpg";
+    String fisier6ImagineDenumire="red-tatt-1200x1500.30dadef4.jpg";
 //
     //!!!!!!!!!!!!!!!!!Descriere Produs!!!!!!!!!!!!!!!!!!!!!!
     String descriereProdus1="carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.";

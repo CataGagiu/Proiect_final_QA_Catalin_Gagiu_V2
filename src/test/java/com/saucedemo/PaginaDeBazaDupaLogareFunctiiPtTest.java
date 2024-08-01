@@ -1,8 +1,13 @@
 package com.saucedemo;
 
+import org.apache.commons.io.FilenameUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import java.io.File;
 
 public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
 {
@@ -95,11 +100,11 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
         WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
         assert  badge.isDisplayed();
     }
-    public boolean verificareCifraBadgeAfisat()
-    {
-        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
-        return  badge.isDisplayed();
-    }
+//    public boolean verificareCifraBadgeAfisat()
+//    {
+//        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
+//        return  badge.isDisplayed();
+//    }
     //verificare butoane Add To Chart
 
     public void verificareExistentaButonAddToChart1()
@@ -210,29 +215,37 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
 
     //verificare imagine produs
 
+    public void verificareNumeFisierByXpath(String locatieImagine,String denumireFisierAsteptat)
+    {
+        WebElement imagine=driver.findElement(By.xpath(locatieImagine));
+        String src=imagine.getAttribute("src");
+        String denumireFisier=FilenameUtils.getName(src);
+        Assert.assertEquals(denumireFisier,denumireFisierAsteptat);
+    }
+
     public void verificareImagineProdus1()
     {
-        verificareExistentaElementByXpath(locatorImagineProdus1ByXpath);
+        verificareNumeFisierByXpath(locatorImagineProdus1ByXpath,fisier1ImagineDenumire);
     }
     public void verificareImagineProdus2()
     {
-        verificareExistentaElementByXpath(locatorImagineProdus2ByXpath);
+        verificareNumeFisierByXpath(locatorImagineProdus2ByXpath,fisier2ImagineDenumire);
     }
     public void verificareImagineProdus3()
     {
-        verificareExistentaElementByXpath(locatorImagineProdus3ByXpath);
+        verificareNumeFisierByXpath(locatorImagineProdus3ByXpath,fisier3ImagineDenumire);
     }
     public void verificareImagineProdus4()
     {
-        verificareExistentaElementByXpath(locatorImagineProdus4ByXpath);
+        verificareNumeFisierByXpath(locatorImagineProdus4ByXpath,fisier4ImagineDenumire);
     }
     public void verificareImagineProdus5()
     {
-        verificareExistentaElementByXpath(locatorImagineProdus5ByXpath);
+        verificareNumeFisierByXpath(locatorImagineProdus5ByXpath,fisier5ImagineDenumire);
     }
     public void verificareImagineProdus6()
     {
-        verificareExistentaElementByXpath(locatorImagineProdus6ByXpath);
+        verificareNumeFisierByXpath(locatorImagineProdus6ByXpath,fisier6ImagineDenumire);
     }
     //verificare pret produs
     public void verificaPretProdus1()
