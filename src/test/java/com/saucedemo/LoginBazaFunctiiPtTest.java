@@ -12,20 +12,33 @@ import java.time.Duration;
 
 public class LoginBazaFunctiiPtTest extends PaginaDeBaza
 {
+    //intarziere deschidere element
+
+
     //verificare element locatie
+
+    public void intarziereDeschidereElementByXpath(String locatorElementXpath)
+    {
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorElementXpath)));
+    }
+    public void intarziereDeschidereElementByNume(String locatorElementByNume)
+    {
+        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatorElementByNume)));
+
+    }
 
     public void verificareExistentaElementByXpath(String locatorElement)
     {
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        intarziereDeschidereElementByXpath(locatorElement);
         WebElement element=driver.findElement(By.xpath(locatorElement));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(locatorElement)));
         assert element.isDisplayed();
     }
     public void  verificareExistentaElementByNume(String locatorElement)
     {
         WebElement element=driver.findElement(By.name(locatorElement));
-        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.name(locatorElement)));
+        intarziereDeschidereElementByNume(locatorElement);
         assert element.isDisplayed();
     }
     public void verificareExistentaElementByID(String locatieElementID)

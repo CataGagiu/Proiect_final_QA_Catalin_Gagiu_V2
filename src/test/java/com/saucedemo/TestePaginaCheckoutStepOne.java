@@ -76,13 +76,6 @@ public class TestePaginaCheckoutStepOne extends PaginaCheckoutStepOneFunctiiPtTe
     }
 
     @Test
-    public void verificareApasareButonAboutDinCartMeniuTest()
-    {
-        apasareButonMeniu();
-        apasaButonAbout();
-    }
-
-    @Test
     public void verificareApasareButonAllItemsCartMeniuTest()
     {
         apasareButonMeniu();

@@ -19,21 +19,6 @@ public class PaginaDeBaza
         //open page
         String url = "https://www.saucedemo.com/";
         driver = new ChromeDriver(options);
-//        switch (browser)
-//        {
-//            case "chrome":
-//                driver = new ChromeDriver(options);
-//                break;
-//            case "edge":
-//                driver = new EdgeDriver();
-//                break;
-//            case "firefox":
-//                driver = new FirefoxDriver();
-//                break;
-//            default:
-//                driver = new ChromeDriver();
-//        }
-
         driver.get(url);
         driver.manage().window().maximize();
     }
@@ -55,6 +40,7 @@ public class PaginaDeBaza
     String locatorButonLogoutByXpath="/html//a[@id='logout_sidebar_link']";
     String locatorButonRessetAppStateByXpat="/html//a[@id='reset_sidebar_link']";
     String locatorButonAllItemByXpath="/html//a[@id='inventory_sidebar_link']";
+    String locatorInchidereMeniuXpath="//*[@id=\"react-burger-cross-btn\"]";
 
 
     //Pagina cart
@@ -66,32 +52,6 @@ public class PaginaDeBaza
 
     String locatorButonContinueByID="continue";
     String locatorButonCancelById="cancel";
-
-//    @Test
-//            public void sortare()
-//    {
-//        Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-//
-//        WebElement acceptcooki=driver.findElement(By.id("accept-cookie-policy"));
-//        acceptcooki.click();
-//
-//        WebElement cautare=driver.findElement(By.id("mobile-search"));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("mobile-search")));
-//        cautare.click();
-//
-//        WebElement cauta=driver.findElement(By.id("search-input"));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("search-input")));
-//        cauta.sendKeys("genti");
-//
-//
-//        WebElement lupa=driver.findElement(By.xpath("//*[@id=\"mobile-search\"]/div"));
-//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=\"mobile-search\"]/div")));
-//        lupa.click();
-
-
-
-  //  }
-
 
     //locatori butoane produse
     String locatorButonAddToChartProdus1ByID="add-to-cart-sauce-labs-backpack";

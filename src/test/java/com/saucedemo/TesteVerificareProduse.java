@@ -1,7 +1,8 @@
 package com.saucedemo;
 
 import org.testng.annotations.Test;
-//validat
+
+//verificare existenta butoane add to cart la toate produsele
 public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
 {
     @Test
@@ -34,14 +35,13 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificareExistentaButonAddToChart6();
     }
 
+    //apasa butoane add to cart
     @Test
     public void apasaButonAddToChartProdus1Test()
     {
         apasaButonByID(locatorButonAddToChartProdus1ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus1();
-
     }
-
     @Test
     public void apasaButonAddToChartProdus2Test()
     {
@@ -49,7 +49,6 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificareModificareMesajButonAddToChartInRemoveProdus2();
         verificareExistentaBadgeCart();
     }
-
     @Test
     public void apasaButonAddToChartProdus3Test()
     {
@@ -57,7 +56,6 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificareModificareMesajButonAddToChartInRemoveProdus3();
         verificareExistentaBadgeCart();
     }
-
     @Test
     public void apasaButonAddToChartProdus4Test()
     {
@@ -65,7 +63,6 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificareModificareMesajButonAddToChartInRemoveProdus4();
         verificareExistentaBadgeCart();
     }
-
     @Test
     public void apasaButonAddToChartProdus5Test()
     {
@@ -73,7 +70,6 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificareModificareMesajButonAddToChartInRemoveProdus5();
         verificareExistentaBadgeCart();
     }
-
     @Test
     public void apasaButonAddToChartProdus6Test()
     {
@@ -119,7 +115,7 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         apasaButonAddToChart6();
         verificareModificareMesajButonAddToChartInRemoveProdus6();
     }
-    // apasa buton Remove
+    // verificare apasare butoane Remove
 
     @Test
     public void apasaButonRemoveProdus1Test()
@@ -164,12 +160,12 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificareExistentaButonAddToChart6();
     }
 
+    //verificare imagine produs
     @Test
     public void verificareImagineProdus1Test()
     {
         verificareImagineProdus1();
     }
-
     @Test
     public void verificareImagineProdus2Test()
     {
@@ -195,6 +191,8 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
     {
         verificareImagineProdus6();
     }
+
+    //verificare pret produs
     @Test
     public void verificarePretProdus1Test()
     {
@@ -225,7 +223,7 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
     {
         verificaPretProdus6();
     }
-
+// verificare denumire produs
     @Test
     public void verificaDenumireProdus1()
     {
@@ -263,35 +261,35 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
         verificaDescriereProduse(descriereProdus1,locatorDescriereProdus1ByXpath);
     }
 
-
+// verificare descriere produs
     @Test
     public void verificaDescriereProdus2()
     {
-        apasaButonByXpath("//*[@id=\"react-burger-cross-btn\"]");
+        apasaButonByXpath(locatorInchidereMeniuXpath);
         verificaDescriereProduse(descriereProdus2,locatorDescriereProdus2ByXpath);
     }
     @Test
     public void verificaDescriereProdus3()
     {
-        apasaButonByXpath("//*[@id=\"react-burger-cross-btn\"]");
+        apasaButonByXpath(locatorInchidereMeniuXpath);
         verificaDescriereProduse(descriereProdus3,locatorDescriereProdus3ByXpath);
     }
     @Test
     public void verificaDescriereProdus4()
     {
-        apasaButonByXpath("//*[@id=\"react-burger-cross-btn\"]");
+        apasaButonByXpath(locatorInchidereMeniuXpath);
         verificaDescriereProduse(descriereProdus4,locatorDescriereProdus4ByXpath);
     }
     @Test
     public void verificaDescriereProdus5()
     {
-        apasaButonByXpath("//*[@id=\"react-burger-cross-btn\"]");
+        apasaButonByXpath(locatorInchidereMeniuXpath);
         verificaDescriereProduse(descriereProdus5,locatorDescriereProdus5ByXpath);
     }
     @Test
     public void verificaDescriereProdus6()
     {
-        apasaButonByXpath("//*[@id=\"react-burger-cross-btn\"]");
+        apasaButonByXpath(locatorInchidereMeniuXpath);
         verificaDescriereProduse(descriereProdus6,locatorDescriereProdus6ByXpath);
     }
 }

@@ -17,7 +17,7 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     public void credentialeCorecteUser2Test() //logare functionala credentiale coreocte user 2
     {
         introduUsernameLockedOutUser();
-        introduParolaSecretSauce();;
+        introduParolaSecretSauce();
         apasaButonLogin();
         verificareMesajDeEroareUserBlocat();
     }
@@ -176,5 +176,28 @@ public class TesteLoginSite extends LoginBazaFunctiiPtTest
     {
         apasaButonLogin();
         verificareMesajDeEroareUserLipsa();
+    }
+    @Test
+    public void userCuSpatiuParolaCorecta()
+    {
+        completeazaCampByID(locatorCampLoginUserByID, " ");
+        introduParolaSecretSauce();
+        apasaButonLogin();
+        verificareMesajParolaGresita();
+    }
+    @Test
+    public void userCorectParolaCuSpatiu()
+    {   introduUsernameStandardUser();
+        completeazaCampByID(locatorCampLoginPasswordByID, " ");
+        apasaButonLogin();
+        verificareMesajParolaGresita();
+    }
+    @Test
+    public void CredentialeCuSpatiu()
+    {
+        completeazaCampByID(locatorCampLoginUserByID," ");
+        completeazaCampByID(locatorCampLoginPasswordByID, " ");
+        apasaButonLogin();
+        verificareMesajParolaGresita();
     }
 }

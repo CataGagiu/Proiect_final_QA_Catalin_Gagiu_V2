@@ -11,19 +11,11 @@ public class TestePaginaMeniuDinStangaSus extends PaginaDeBazaDupaLogareFunctiiP
     {
         verificareExistentaButonAllItem();
     }
-
     @Test
     public void verificareExistenteiLogoutTest()
     {
         verificareExistenteiLogout();
     }
-
-    @Test
-    public void verificareExistentaAboutTest()
-    {
-        verificareExistentaAbout();
-    }
-
     @Test
     public void verificareExistentaResetAppStateTest()
     {
@@ -61,6 +53,7 @@ public class TestePaginaMeniuDinStangaSus extends PaginaDeBazaDupaLogareFunctiiP
     @Test
     public void verificareApasareButonAboutDinMeniuTest()
     {
+
         apasaButonAbout();
         verificarePaginaUrl(urlAbout);
     }
@@ -72,9 +65,4 @@ public class TestePaginaMeniuDinStangaSus extends PaginaDeBazaDupaLogareFunctiiP
         verificarePaginaUrl(urlInventoryAllItem);
     }
 
-//    @Test
-//    public void verificareApasaButonResetAppState()
-//    {
-//        apasaButonByXpath(locatorButonRessetAppStateByXpat);
-//    }
 }
