@@ -26,7 +26,6 @@ public class PaginaCheckoutStepOneFunctiiPtTest extends PaginaCartFunctiiPtTest
         String mesajExistent=mesajEroare.getText();
         Assert.assertEquals(mesajExistent,mesajAsteptat);
     }
-
     public void verificaAfisareMesajDeEroareContinueNecompletareFirstName()
     {
         apasaButonContinue();

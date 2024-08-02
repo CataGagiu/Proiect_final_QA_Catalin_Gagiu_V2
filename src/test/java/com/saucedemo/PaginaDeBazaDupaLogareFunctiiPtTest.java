@@ -85,7 +85,7 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
     }
     public void verificaRezultatButonCheckoutApasat()
     {
-        verificarePaginaUrl(urlChechoutStepOne);
+        verificarePaginaUrl(urlChechoutStepTwo);
     }
     public void verificareExistentaButonContinueShopping()
     {
@@ -100,16 +100,17 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
         WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
         assert  badge.isDisplayed();
     }
-//    public boolean verificareCifraBadgeAfisat()
-//    {
-//        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
-//        return  badge.isDisplayed();
-//    }
+    public boolean verificareExistentaBadgeAfisat()
+    {
+        WebElement badge=driver.findElement(By.xpath(locatorBadgeByXpath));
+        return  badge.isDisplayed();
+    }
     //verificare butoane Add To Chart
 
     public void verificareExistentaButonAddToChart1()
     {
         verificareExistentaElementByID(locatorButonAddToChartProdus1ByID);
+
     }
     public void verificareExistentaButonAddToChart2()
     {
@@ -137,6 +138,7 @@ public class PaginaDeBazaDupaLogareFunctiiPtTest extends LoginBazaFunctiiPtTest
     public void apasaButonAddToChart1()
     {
         apasaButonByID(locatorButonAddToChartProdus1ByID);
+        assert verificareExistentaBadgeAfisat();
 
     }
     public void apasaButonAddToChart2()

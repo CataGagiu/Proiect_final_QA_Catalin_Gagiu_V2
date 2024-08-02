@@ -18,7 +18,7 @@ public class TesteCart extends PaginaCartFunctiiPtTest
     }
 
     @Test
-    public void verificaExistentaButonCheckoutInCartTest()
+    public void verificaaApasaButonCheckoutInCartTest()
     {
         apasaButonCart();
         verificaExistentaButonCheckout();
@@ -46,4 +46,6 @@ public class TesteCart extends PaginaCartFunctiiPtTest
         apasaButonContinueShopping();
         verificarePaginaUrl(urlInventoryAllItem);
     }
+    //@Test
+
 }

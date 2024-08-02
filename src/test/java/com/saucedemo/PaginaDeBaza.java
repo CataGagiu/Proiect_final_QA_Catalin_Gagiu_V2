@@ -195,7 +195,7 @@ public class PaginaDeBaza
 
     String mesajDeEroarePicareTestLogin="mesajul de eroare login nu corespunde asteptarilor";
 
-@AfterMethod
+//@AfterMethod
     public void inchideBrowser()
     {
             driver.quit();

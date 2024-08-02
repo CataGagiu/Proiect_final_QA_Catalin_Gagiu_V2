@@ -41,41 +41,42 @@ public class TesteVerificareProduse extends PaginaCartFunctiiPtTest
     {
         apasaButonByID(locatorButonAddToChartProdus1ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus1();
+        assert verificareExistentaBadgeAfisat();
     }
     @Test
     public void apasaButonAddToChartProdus2Test()
     {
         apasaButonByID(locatorButonAddToChartProdus2ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus2();
-        verificareExistentaBadgeCart();
+        assert verificareExistentaBadgeAfisat();
     }
     @Test
     public void apasaButonAddToChartProdus3Test()
     {
         apasaButonByID(locatorButonAddToChartProdus3ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus3();
-        verificareExistentaBadgeCart();
+        assert verificareExistentaBadgeAfisat();
     }
     @Test
     public void apasaButonAddToChartProdus4Test()
     {
         apasaButonByID(locatorButonAddToChartProdus4ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus4();
-        verificareExistentaBadgeCart();
+        assert verificareExistentaBadgeAfisat();
     }
     @Test
     public void apasaButonAddToChartProdus5Test()
     {
         apasaButonByID(locatorButonAddToChartProdus5ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus5();
-        verificareExistentaBadgeCart();
+        assert verificareExistentaBadgeAfisat();
     }
     @Test
     public void apasaButonAddToChartProdus6Test()
     {
         apasaButonByID(locatorButonAddToChartProdus6ByID);
         verificareModificareMesajButonAddToChartInRemoveProdus6();
-        verificareExistentaBadgeCart();
+        assert verificareExistentaBadgeAfisat();
     }
 
     //verificare existenta butoane remove

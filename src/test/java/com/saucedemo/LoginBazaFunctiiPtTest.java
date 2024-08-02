@@ -106,6 +106,11 @@ public class LoginBazaFunctiiPtTest extends PaginaDeBaza
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(locatorByID)));
         buton.click();
     }
+    //apasa buton login
+    public void apasaButonLogin()
+{
+    apasaButonByID(locatorButonLoginByID);
+}
 
     //Verificare pagina url corespunde asteptarilor
 
@@ -185,10 +190,6 @@ public class LoginBazaFunctiiPtTest extends PaginaDeBaza
     }
 
     // apasa buton meniu stanga sus
-    public void apasaButonLogin()
-    {
-        apasaButonByID(locatorButonLoginByID);
-    }
     public void apasareButonMeniu()
     {
         apasaButonByXpath(locatorButonMeniuStangaSusByXpath);
